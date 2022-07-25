@@ -10,4 +10,4 @@ const HamBergger = ({bg}) => {
   )
 }
 
-export default HamBergger
+export default HamBergger;

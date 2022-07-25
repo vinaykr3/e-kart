@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+I have installed redux and redux-presist and define Header folder inside components folder.
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,6 +1,6 @@
 
-import { CloseMenu } from "../Types/CloseMenu.type";
-import { OpenMenu } from "../Types/OpenMenu.type";
+import { CloseMenu } from "../Types/CloseMenu.type"
+import { OpenMenu } from "../Types/OpenMenu.type"
 export const NavbarInitialState = '-translate-x-[1279px]'
 
 const NavbarReducer = (state = NavbarInitialState, action) => {

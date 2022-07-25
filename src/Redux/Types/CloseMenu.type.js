@@ -1,1 +1,1 @@
-export const CloseMenu = "CLOSE_MENU";
+export const CloseMenu = "CLOSE_MENU"
