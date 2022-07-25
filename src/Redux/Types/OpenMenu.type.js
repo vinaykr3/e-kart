@@ -1,0 +1,1 @@
+export const OpenMenu = "OPEN_MENU";

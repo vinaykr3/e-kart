@@ -1,0 +1,1 @@
+export const CloseMenu = "CLOSE_MENU";
