@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import DetailsPage from "./components/DetailsPage/DetailsPage";
 // import BottomBar from "./components/BottomBar/BottomBar";
 // import Cart from "./components/Cart/Cart";
 // import DetailsPage from './components/DetailsPage/DetailsPage';
@@ -12,6 +13,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />}/>
+          <Route path="/detailsPage/:id" element={<DetailsPage />}/>
         </Routes>
         {/* <BottomBar /> */}
       </BrowserRouter>
