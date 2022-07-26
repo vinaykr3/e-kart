@@ -4,6 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 I have installed redux and redux-presist and define Header folder inside components folder.
 
+## Icons use
+Defined icons like cart-icon, search-icon, setting-icon but setting icon does not show anything by clicking I'll show something in future.
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-// import Search from '../Search/Search';
+import Search from '../Search/Search';
 import HamBergger from './HamBergger'
 import Navbar from './Navbar';
 import { OpenMenuAction } from '../../Redux/Actions/OpenMenu.Action';
@@ -14,20 +14,20 @@ const Header = () => {
                     <div className="image ml-3 md:ml-10">
                         <img src="/images/logo-png.jpg" alt="logo-img" className='w-48 xl:w-full' />
                     </div>
-                    <div className='navbar hidden xl:flex items-center'>   
+                    <div className='navbar hidden xl:flex items-center'>
                         <Navbar />
                         <div className="search-setting-cart xl:flex xl:justify-between">
-                            {/* <Search /> */}
+                            <Search />
                         </div>
                     </div>
-                    
+
                 </div>
                 <div className='md:flex md:justify-between md:space-x-4'>
                     <div className='xl:hidden' onClick={() => { dispatch(OpenMenuAction()) }}>
                         <HamBergger bg={'bg-green-400'} />
                     </div>
                     <div className="search-setting-cart hidden md:flex md:justify-between xl:hidden">
-                        {/* <Search /> */}
+                        <Search />
                     </div>
                 </div>
             </div>
