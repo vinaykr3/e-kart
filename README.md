@@ -7,6 +7,10 @@ I have installed redux and redux-presist and define Header folder inside compone
 ## Icons use
 Defined icons like cart-icon, search-icon, setting-icon but setting icon does not show anything by clicking I'll show something in future.
 
+## Cart feature
+Add to cart feature added successfully and user can be delete successfully.
+
+
 ## Available Scripts
 
 In the project directory, you can run:

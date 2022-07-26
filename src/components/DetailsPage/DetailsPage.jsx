@@ -1,10 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { AddToCartAction } from '../../Redux/Actions/AddToCart.Action';
 import Loading from '../Loading';
 
 const DetailsPage = () => {
+    const dispatch = useDispatch()
     const { id } = useParams();
     const [response, setResponse] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -77,7 +80,7 @@ const DetailsPage = () => {
                                     </div>
                                     <div className="flex">
                                         <span className="title-font font-medium text-2xl text-gray-900">${price}</span>
-                                        <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Add To Cart</button>
+                                        <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" onClick={() => {dispatch(AddToCartAction(response))}}>Add To Cart</button>
                                     </div>
                                 </div>
                             </div>
