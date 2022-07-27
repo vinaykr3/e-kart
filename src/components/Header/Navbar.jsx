@@ -21,12 +21,6 @@ const Navbar = () => {
                     <li>
                         <Link to="/" className='text-xl xl:text-2xl font-bold font-mono'>SHOP</Link>
                     </li>
-                    <li>
-                        <Link to="/" className='text-xl xl:text-2xl font-bold font-mono'>PRODUCTS</Link>
-                    </li>
-                    <li>
-                        <Link to="/" className='text-xl xl:text-2xl font-bold font-mono'>FEATURES</Link>
-                    </li>
                 </ul>
             </div>
         </>

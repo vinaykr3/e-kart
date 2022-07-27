@@ -4,6 +4,7 @@ import BottomBar from "./components/BottomBar/BottomBar";
 import Header from './components/Header/Header';
 import Home from './components/HomePage/Home';
 import Cart from "./components/Cart/Cart";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (

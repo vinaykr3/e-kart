@@ -1,17 +1,24 @@
+/* eslint-disable no-const-assign */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai";
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { AddToCartAction } from '../../Redux/Actions/AddToCart.Action';
 import Loading from '../Loading';
+import { ToastContainer, toast } from 'react-toastify';
 
 const DetailsPage = () => {
     const dispatch = useDispatch()
     const { id } = useParams();
     const [response, setResponse] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [btn, setBtn] = useState(1);
     const { title, image, description, category, price, rating } = response;
+
+    const notify = () => toast("Product has been added successfully !");
+
     useEffect(() => {
         const details = async () => {
             setLoading(true);
@@ -23,6 +30,10 @@ const DetailsPage = () => {
         details();
     }, [])
 
+    const addToCart = () => {
+        dispatch(AddToCartAction(response, btn))
+        notify();
+    }
 
     return (
         <>
@@ -78,9 +89,21 @@ const DetailsPage = () => {
                                     <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
 
                                     </div>
-                                    <div className="flex">
-                                        <span className="title-font font-medium text-2xl text-gray-900">${price}</span>
-                                        <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" onClick={() => {dispatch(AddToCartAction(response))}}>Add To Cart</button>
+                                    <div className="flex justify-between items-center">
+                                        <span className="title-font font-medium text-2xl text-gray-900">${price * btn}</span>
+
+                                        <div className="flex items-center flex-col mx-2">
+                                            <div>
+                                                <p>Quantity</p>
+                                            </div>
+                                            <div className="flex">
+                                                <AiFillMinusSquare className="font-bold text-2xl cursor-pointer" onClick={() => { btn === 1 ? setBtn(btn): setBtn(btn - 1) }} />
+                                                <input type="text" className='mx-1 border border-blue-400 w-8 text-center outline-none rounded-md bg-transparent text-green-600' value={btn} />
+                                                <AiFillPlusSquare className="font-bold text-2xl cursor-pointer" onClick={() => { setBtn(btn + 1) }} />
+                                            </div>
+                                        </div>
+                                        <button className="flex text-white text-sm bg-indigo-500 border-0 py-1 px-2 focus:outline-none hover:bg-indigo-600 rounded" onClick={addToCart}>Add To Cart</button>
+                                        <ToastContainer />
                                     </div>
                                 </div>
                             </div>
