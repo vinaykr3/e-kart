@@ -29,7 +29,7 @@ const Home = () => {
     return (
         <>
             <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
+                <div className="container px-5 mx-auto">
                     <div className="flex flex-wrap -m-4">
                         {
                             loading ? <div className='md:flex mx-auto md:space-x-4 space-y-4 md:space-y-0'>
@@ -41,11 +41,11 @@ const Home = () => {
                                 filter && filter.map((data) => {
                                     const { id, image, category, title, price } = data;
                                     return (
-                                        <div key={id} className="lg:w-1/4 md:w-1/2 p-4 w-full border border-slate-300  my-2">
+                                        <div key={id} className="lg:w-1/4 md:w-1/2 p-4 w-1/2 border border-slate-300  my-2">
                                             <Link to={`/detailsPage/${id}`} className="border border-slate-300">
 
                                                 <p className="block h-48 rounded overflow-hidden" key={id}>
-                                                    <img alt="ecommerce" className="object-contain w-full h-full block" src={image} />
+                                                    <img alt="ecommerce" className="object-contain w-full mx-auto h-full block" src={image} />
                                                 </p>
                                                 <div className="mt-4">
                                                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{category}</h3>

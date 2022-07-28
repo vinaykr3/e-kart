@@ -22,10 +22,12 @@ const AddToCartReducer = (state = AddToCartInitialState, action) => {
             }
         case RemoveItem:
             const leftOver = state.product.filter(pro => pro.id !== action.payload);
-            console.log(leftOver);
             return {
                 ...state, product : leftOver,
             }
+        case "SEARCH":
+            console.log(action.payload);
+            return state;
         default:
             return state;
     }
